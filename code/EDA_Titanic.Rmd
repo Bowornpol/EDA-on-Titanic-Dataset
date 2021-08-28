@@ -24,10 +24,7 @@ Titanic_train$Parch = as.numeric(Titanic_train$Parch)
 ```
 
 Let’s go over the data class again with the sapply() function. Also, double-check the data summary.
-```{r}
-sapply(Titanic_train, class)
-summary(Titanic_train)
-```
+
 The Titanic dataset has 12 variables. As a result, I classified variables into two types.
 
 1. Continuous variables: Age, SibSp, Parch, and Fare.
