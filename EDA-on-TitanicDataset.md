@@ -142,6 +142,7 @@ ggplot(data=Titanic_train, aes(Embarked, fill = factor(Survived))) +
 ```
 
 9. Table of summary statistics
+I opted to utilize the gtsummary package to summarize data statistics.
 ```{r}
 library(gtsummary)
 Titanic_train <- Titanic_train %>% select(Survived, Sex, Age, Pclass, SibSp, Parch, Fare, Embarked)
