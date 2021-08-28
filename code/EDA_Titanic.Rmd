@@ -3,12 +3,10 @@ The Titanic dataset is available for download from Kaggle. Then you can tell RSt
 ```{r}
 Titanic_train = read.csv("data/train.csv")
 ```
-
 Let’s look at a data summary.
 ```{r}
 summary(Titanic_train)
 ```
-
 I discovered something strange in the Survived and Sex section. So I used the sapply() function to determine the data class.
 ```{r}
 sapply(Titanic_train, class)
@@ -20,7 +18,6 @@ Titanic_train$Sex = as.factor(Titanic_train$Sex)
 Titanic_train$SibSp = as.numeric(Titanic_train$SibSp)
 Titanic_train$Parch = as.numeric(Titanic_train$Parch)
 ```
-
 Let’s go over the data class again with the sapply() function. Also, double-check the data summary.
 
 The Titanic dataset has 12 variables. As a result, I classified variables into two types.
@@ -42,7 +39,6 @@ First and foremost, you must install a data visualization package. I chose to in
 ```{r}
 library(ggplot2)
 ```
-
 1. Survival by Sex
 ```{r}
 ggplot(data=Titanic_train, aes(Sex, fill = factor(Survived))) + 
@@ -51,7 +47,6 @@ ggplot(data=Titanic_train, aes(Sex, fill = factor(Survived))) +
   ylab("%Passengers") + ggtitle("Proportion of Passengers by Sex") + 
   scale_y_continuous(labels = function(x) paste0(x*100, "%"))
 ```
-
 2. Survival by Age
 ```{r}
 ggplot(data=Titanic_train, aes(Age, fill = factor(Survived))) +
@@ -66,7 +61,6 @@ ggplot(data=Titanic_train, aes(Survived, Age)) +
   geom_point(show.legend = FALSE) + 
   geom_jitter()
 ```
-
 3. Survival by Pclass
 ```{r}
 ggplot(data=Titanic_train, aes(Pclass, fill = factor(Survived))) + 
@@ -76,7 +70,6 @@ ggplot(data=Titanic_train, aes(Pclass, fill = factor(Survived))) +
   ggtitle("Proportion of Passengers by Pclass") +
   scale_y_continuous(labels = function(x) paste0(x*100, "%"))
 ```
-
 4. Survival by SibSp
 ```{r}
 ggplot(data=Titanic_train, aes(SibSp, fill = factor(Survived))) +
@@ -86,7 +79,6 @@ ggplot(data=Titanic_train, aes(SibSp, fill = factor(Survived))) +
   labs(fill = "Survived") +
   ggtitle("SibSp Distribution of Passengers")
 ```
-
 5. Survival by Parch
 ```{r}
 ggplot(data=Titanic_train, aes(Parch, fill = factor(Survived))) +
@@ -96,7 +88,6 @@ ggplot(data=Titanic_train, aes(Parch, fill = factor(Survived))) +
   labs(fill = "Survived") +
   ggtitle("Parch Distribution of Passengers")
 ```
-
 6. Survival by SibSp+Parch
 ```{r}
 ggplot(data=Titanic_train, aes(SibSp+Parch, fill = factor(Survived))) +
@@ -106,7 +97,6 @@ ggplot(data=Titanic_train, aes(SibSp+Parch, fill = factor(Survived))) +
   labs(fill = "Survived") +
   ggtitle("SibSp+Parch Distribution of Passengers")
 ```
-
 7. Survival by Fare
 ```{r}
 ggplot(data=Titanic_train, aes(Fare, fill = factor(Survived))) +
@@ -121,7 +111,6 @@ ggplot(data=Titanic_train, aes(Survived, Fare)) +
   geom_point(show.legend = FALSE) + 
   geom_jitter()
 ```
-
 8. Survival by Embarked
 ```{r}
 ggplot(data=Titanic_train, aes(Embarked, fill = factor(Survived))) + 
@@ -129,7 +118,6 @@ ggplot(data=Titanic_train, aes(Embarked, fill = factor(Survived))) +
   scale_fill_discrete(name = "Survived") + 
   ggtitle("Survival by Port of Embarkation")
 ```
-
 9. Table of summary statistics
 I opted to utilize the gtsummary package to summarize data statistics.
 ```{r}
