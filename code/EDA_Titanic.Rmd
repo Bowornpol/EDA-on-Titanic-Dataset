@@ -35,7 +35,7 @@ To count the number of NA values in a column, I used the is.na() function.
 ```{r}
 sum(is.na(Titanic_train))
 ```
-The number of NA values is 177. Then I decided to eliminate the row that has NA value by following:
+Then I decided to eliminate the row that has NA value by following:
 ```{r}
 Titanic_train <- Titanic_train[!(is.na(Titanic_train$Age)),]
 ```
