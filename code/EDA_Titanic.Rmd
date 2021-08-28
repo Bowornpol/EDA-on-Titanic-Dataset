@@ -27,7 +27,6 @@ Let’s go over the data class again with the sapply() function. Also, double-ch
 ```{r}
 sapply(Titanic_train, class)
 summary(Titanic_train)
-
 ```
 The Titanic dataset has 12 variables. As a result, I classified variables into two types.
 
