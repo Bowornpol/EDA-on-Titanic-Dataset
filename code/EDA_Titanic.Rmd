@@ -13,8 +13,6 @@ I discovered something strange in the Survived and Sex section. So I used the sa
 ```{r}
 sapply(Titanic_train, class)
 ```
-Note: sapply() function takes to list, vector, or data frame as input and gives output in vector or matrix. It is useful for operations on list objects and returns a list object of the same length as the original set.
-
 Then I altered the classes of Survive, Sex, SibSp, and Parch by doing the following:
 ```{r}
 Titanic_train$Survived = as.factor(Titanic_train$Survived)
@@ -26,7 +24,6 @@ Titanic_train$Parch = as.numeric(Titanic_train$Parch)
 Let’s go over the data class again with the sapply() function. Also, double-check the data summary.
 
 The Titanic dataset has 12 variables. As a result, I classified variables into two types.
-
 1. Continuous variables: Age, SibSp, Parch, and Fare.
 2. Categorical variables: PassengerId, Survived, Pclass, Sex, Ticket, Cabin, and Embarked.
 
