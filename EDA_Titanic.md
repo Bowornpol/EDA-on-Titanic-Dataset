@@ -149,3 +149,4 @@ Titanic_train <- Titanic_train %>% select(Survived, Sex, Age, Pclass, SibSp, Par
 Titanic_train %>% tbl_summary(by = Survived, type = c(SibSp, Parch) ~ "continuous", 
 statistic = list(all_continuous() ~ "{mean} ({sd})",
 all_categorical() ~ "{n} / {N} ({p}%)"))
+```
