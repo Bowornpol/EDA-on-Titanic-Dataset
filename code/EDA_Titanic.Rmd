@@ -29,8 +29,6 @@ sapply(Titanic_train, class)
 summary(Titanic_train)
 
 ```
-
-
 The Titanic dataset has 12 variables. As a result, I classified variables into two types.
 
 1. Continuous variables: Age, SibSp, Parch, and Fare.
@@ -51,7 +49,6 @@ First and foremost, you must install a data visualization package. I chose to in
 ```{r}
 library(ggplot2)
 ```
-
 
 1. Survival by Sex
 ```{r}
